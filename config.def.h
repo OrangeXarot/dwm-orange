@@ -77,6 +77,8 @@ static const char *rangcmd[]  = { "rangercons", NULL };
 
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
 static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
+static const char *maxvol[]  = { "amixer", "-q", "set", "Master", "100%", "unmute", NULL };
+static const char *sixninevol[] = { "amixer", "-q", "set", "Master", "69%", "unmute", NULL };
 static const char *mutevol[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
 static const char *scrnsht[] = { "flameshot", "gui", NULL };
 
@@ -111,6 +113,8 @@ static Key keys[] = {
     
     { MODKEY,                       XK_F8,     spawn,          {.v = upvol   } },
     { MODKEY,                       XK_F7,     spawn,          {.v = downvol } },
+    { MODKEY|ShiftMask,             XK_F7,     spawn,          {.v = sixninevol } },
+    { MODKEY|ShiftMask,             XK_F8,     spawn,          {.v = maxvol } },
     { MODKEY,                       XK_F6,     spawn,          {.v = mutevol } },
     { MODKEY,                       XK_F4,     spawn,          {.v = scrnsht } },
     TAGKEYS(                        XK_1,                      0)
